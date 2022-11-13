@@ -9,6 +9,6 @@ public class IndexController {
     public String index() {
         return "Hello DevOps World !" +
                 "<br/>" +
-                "Added in development branch !";
+                "Changes for Assignment Task #6 !";
     }
 }
