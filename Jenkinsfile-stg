@@ -6,7 +6,7 @@ pipeline {
         AZURE_STAGE_AKS = 'aks-stage'
     }
     stages {
-        stage('Input') {
+        stage('Version Input') {
             steps {
                 script {
                     def usInput = input(message: 'Enter application version for deployment',
@@ -19,9 +19,6 @@ pipeline {
             }
         }
         stage('Deploy') {
-            when {
-                branch 'master'
-            }
             steps {
                 echo 'Deploy'
                 // TODO: apply version in deployment.yml
