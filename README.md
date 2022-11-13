@@ -17,3 +17,5 @@ You are required to perform following tasks:
 * List the importance and benefits of CI\CD
 
 > Bonus Point: Usage of plugins such as AWS or Azure for above tasks is advised
+
+> Author: Ravi Kant Pandey (2022MT93177)
