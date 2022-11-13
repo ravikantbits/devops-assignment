@@ -14,6 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Test'
+                sh 'mvn verify'
             }
         }
         stage('Deploy') {
