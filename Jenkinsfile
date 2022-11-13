@@ -27,6 +27,9 @@ pipeline {
             }
         }
         stage ('Containerization') {
+            when {
+                branch 'master'
+            }
             steps {
                 echo 'Containerization'
                 script {
@@ -38,6 +41,9 @@ pipeline {
             }
         }
         stage('Deploy') {
+            when {
+                branch 'master'
+            }
             steps {
                 echo 'Deploy'
                 sh '''
