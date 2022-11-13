@@ -3,16 +3,24 @@ pipeline {
 
     stages {
         stage('Initialize') {
-            echo 'Initialize'
+            steps {
+                echo 'Initialize'
+            }
         }
         stage('Build') {
-            echo 'Build'
+            steps {
+                echo 'Build'
+            }
         }
         stage('Test') {
-            echo 'Test'
+            steps {
+                echo 'Test'
+            }
         }
         stage('Deploy') {
-            echo 'Deploy'
+            steps {
+                echo 'Deploy'
+            }
         }
     }
 }
