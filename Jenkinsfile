@@ -4,6 +4,12 @@ pipeline {
         maven 'M3'
         jdk 'Java11'
     }
+    environment {
+        imageName = "ravikantbits.azurecr.io/devops-assignment"
+        registryCredential = 'act_ravikantbits'
+        registryUrl = 'ravikantbits.azurecr.io'
+        dockerImage = ''
+    }
     stages {
         stage('Build') {
             steps {
@@ -15,6 +21,17 @@ pipeline {
             steps {
                 echo 'Test'
                 sh 'mvn verify'
+            }
+        }
+        stage ('Containerization') {
+            steps {
+                echo 'Containerization'
+                script {
+                    dockerImage = docker.build imageName
+                    docker.withRegistry( "http://${registryUrl}", registryCredential ) {
+                        dockerImage.push()
+                    }
+                }
             }
         }
         stage('Deploy') {
